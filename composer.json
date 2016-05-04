@@ -1,5 +1,5 @@
 {
-  "name": "yiisoft/yii2-imagine",
+  "name": "nikitich/cloudflare",
   "type": "yii2-extension",
   "require": {
     "yiisoft/yii2": "*"
