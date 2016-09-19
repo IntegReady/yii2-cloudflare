@@ -1,7 +1,7 @@
 Cloudflare Actions
 ==================
 
-Компонент Yii2 для работы с api сервиса https://www.cloudflare.com/
+Компонент Yii2 для работы с api v4.0 сервиса https://www.cloudflare.com/
 
 Минимальные требования — Yii2
 
