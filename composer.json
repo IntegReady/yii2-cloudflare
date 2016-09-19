@@ -1,7 +1,15 @@
 {
   "name": "nikitich/cloudflare",
+  "description": "Yii2 cloudflare extension",
   "type": "yii2-extension",
+  "license": "LGPL-3.0+",
+  "minimum-stability": "dev",
   "require": {
     "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "nikitich\\yii2-smsc\\": ""
+    }
   }
 }
