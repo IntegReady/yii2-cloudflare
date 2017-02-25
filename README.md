@@ -10,7 +10,7 @@ Cloudflare Actions
 ```php
 'components' => [
         'cloudflareactions' => [
-            'class'         => 'nikitich\cloudflare\CloudflareActions',
+            'class'         => 'integready\cloudflare\CloudflareActions',
             'apiendpoint'   => 'https://api.cloudflare.com/client/v4/',
             'authkey'       => '1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik1qaz2w',
             'authemail'     => 'admin@mail.com',
