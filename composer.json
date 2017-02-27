@@ -1,15 +1,24 @@
 {
-  "name": "nikitich/cloudflare",
+  "name": "integready/yii2-cloudflare",
   "description": "Yii2 cloudflare extension",
   "type": "yii2-extension",
+  "homepage": "https://github.com/IntegReady/yii2-cloudflare",
   "license": "LGPL-3.0+",
   "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "IntegReady"
+    }
+  ],
   "require": {
     "yiisoft/yii2": "*"
   },
+  "require-dev": {
+    "yiisoft/yii2-coding-standards": "*"
+  },
   "autoload": {
     "psr-4": {
-      "nikitich\\cloudflare\\": ""
+      "integready\\cloudflare\\": ""
     }
   }
 }
