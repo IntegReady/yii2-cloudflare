@@ -12,8 +12,7 @@ Cloudflare Actions
         'cloudflareactions' => [
             'class'         => 'integready\cloudflare\CloudflareActions',
             'apiendpoint'   => 'https://api.cloudflare.com/client/v4/',
-            'authkey'       => '1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik1qaz2w',
-            'authemail'     => 'admin@mail.com',
+            'bearer'        => '1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik1qaz2w',
             'sites'         => [
                 'mysite.com',
                 'anothersite.eu',

@@ -26,8 +26,7 @@ class CloudflareActions extends Component
     const HTTP_METHOD_DELETE = 'DELETE';
 
     public $apiendpoint;
-    public $authkey;
-    public $authemail;
+    public $bearer;
     public $sites;
 
     /**
@@ -142,9 +141,8 @@ class CloudflareActions extends Component
         }
 
         curl_setopt($rCURL, CURLOPT_HTTPHEADER, [
-            'X-Auth-Email: ' . $this->authemail,
-            'X-Auth-Key: ' . $this->authkey,
             'Content-Type: application/json',
+            'Authorization: Bearer ' . $this->bearer,
         ]);
 
         $sResponse = $aFields['response'] = curl_exec($rCURL);
