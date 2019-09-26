@@ -24,6 +24,7 @@ class CloudflareActions extends Component
     const HTTP_METHOD_PUT    = 'PUT';
     const HTTP_METHOD_PATCH  = 'PATCH';
     const HTTP_METHOD_DELETE = 'DELETE';
+
     public $apiendpoint;
     public $authkey;
     public $authemail;
@@ -38,11 +39,81 @@ class CloudflareActions extends Component
     }
 
     /**
+     * @param string $zoneIdentifier
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function listDnsRecords($zoneIdentifier, $params = [])
+    {
+        return $this->makeRequest("zones/{$zoneIdentifier}/dns_records", $params);
+    }
+
+    /**
+     * @param string $zoneIdentifier
+     * @param string $identifier
+     *
+     * @return mixed
+     */
+    public function detailsDnsRecords($zoneIdentifier, $identifier)
+    {
+        return $this->makeRequest("zones/{$zoneIdentifier}/dns_records/{$identifier}");
+    }
+
+    /**
+     * @param string $zoneIdentifier
+     * @param string $type
+     * @param string $name
+     * @param string $content
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function createDnsRecord($zoneIdentifier, $type, $name, $content, $params = [])
+    {
+        return $this->makeRequest("zones/{$zoneIdentifier}/dns_records", array_merge($params, [
+            'name'    => $name,
+            'type'    => $type,
+            'content' => $content,
+        ]), self::HTTP_METHOD_POST);
+    }
+
+    /**
+     * @param string $zoneIdentifier
+     * @param string $identifier
+     * @param string $type
+     * @param string $name
+     * @param string $content
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function updateDnsRecord($zoneIdentifier, $identifier, $type, $name, $content, $params = [])
+    {
+        return $this->makeRequest("zones/{$zoneIdentifier}/dns_records/{$identifier}", array_merge($params, [
+            'name'    => $name,
+            'type'    => $type,
+            'content' => $content,
+        ]), self::HTTP_METHOD_PUT);
+    }
+
+    /**
+     * @param string $zoneIdentifier
+     * @param string $identifier
+     *
+     * @return mixed
+     */
+    public function deleteDnsRecord($zoneIdentifier, $identifier)
+    {
+        return $this->makeRequest("zones/{$zoneIdentifier}/dns_records/{$identifier}", [], self::HTTP_METHOD_DELETE);
+    }
+
+    /**
      * Performs request to the server and gets the answer
      *
-     * @param   string $sURL
-     * @param   array $aData
-     * @param   string $httpMethod
+     * @param string $sURL
+     * @param array $aData
+     * @param string $httpMethod
      *
      * @return  mixed
      */
