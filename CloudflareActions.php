@@ -25,7 +25,8 @@ class CloudflareActions extends Component
     const HTTP_METHOD_PATCH  = 'PATCH';
     const HTTP_METHOD_DELETE = 'DELETE';
 
-    public $apiendpoint;
+    public $apiendpoint = 'https://api.cloudflare.com/client/v4/';
+
     public $bearer;
     public $sites;
 
